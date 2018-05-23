@@ -3,6 +3,7 @@ package floatingmuseum.leetcodeexercise;
 import org.junit.Test;
 
 import floatingmuseum.leetcodeexercise.solutions.easy.EasySolution;
+import floatingmuseum.leetcodeexercise.solutions.hard.HardSolution;
 import floatingmuseum.leetcodeexercise.solutions.medium.MediumSolution;
 
 /**
@@ -13,8 +14,10 @@ import floatingmuseum.leetcodeexercise.solutions.medium.MediumSolution;
 public class ExampleUnitTest {
     @Test
     public void testSolution() throws Exception {
-        MediumSolution mediumSolution = new MediumSolution();
-        int length = mediumSolution.lengthOfLongestSubstring("pwwkew");
-        System.out.println("lengthOfLongestSubstring:"+length);
+        EasySolution easy = new EasySolution();
+
+        MediumSolution medium = new MediumSolution();
+
+        HardSolution hard = new HardSolution();
     }
 }
