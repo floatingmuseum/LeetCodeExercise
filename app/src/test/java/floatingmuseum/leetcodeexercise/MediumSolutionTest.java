@@ -2,9 +2,6 @@ package floatingmuseum.leetcodeexercise;
 
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 
 import floatingmuseum.leetcodeexercise.solutions.medium.MediumSolution;
 
@@ -46,72 +43,57 @@ public class MediumSolutionTest {
         print(result5 + "...time:" + (System.currentTimeMillis() - start1));
 
         long start2 = System.currentTimeMillis();
-        String result6 = solution.longestPalindromeV2("zudfweormatjycujjirzjpyrmaxurectxrtqedmmgergwdvjmjtstdhcihacqnothgttgqfywcpgnuvwglvfiuxteopoyizgehkwuvvkqxbnufkcbodlhdmbqyghkojrgokpwdhtdrwmvdegwycecrgjvuexlguayzcammupgeskrvpthrmwqaqsdcgycdupykppiyhwzwcplivjnnvwhqkkxildtyjltklcokcrgqnnwzzeuqioyahqpuskkpbxhvzvqyhlegmoviogzwuiqahiouhnecjwysmtarjjdjqdrkljawzasriouuiqkcwwqsxifbndjmyprdozhwaoibpqrthpcjphgsfbeqrqqoqiqqdicvybzxhklehzzapbvcyleljawowluqgxxwlrymzojshlwkmzwpixgfjljkmwdtjeabgyrpbqyyykmoaqdambpkyyvukalbrzoyoufjqeftniddsfqnilxlplselqatdgjziphvrbokofvuerpsvqmzakbyzxtxvyanvjpfyvyiivqusfrsufjanmfibgrkwtiuoykiavpbqeyfsuteuxxjiyxvlvgmehycdvxdorpepmsinvmyzeqeiikajopqedyopirmhymozernxzaueljjrhcsofwyddkpnvcvzixdjknikyhzmstvbducjcoyoeoaqruuewclzqqqxzpgykrkygxnmlsrjudoaejxkipkgmcoqtxhelvsizgdwdyjwuumazxfstoaxeqqxoqezakdqjwpkrbldpcbbxexquqrznavcrprnydufsidakvrpuzgfisdxreldbqfizngtrilnbqboxwmwienlkmmiuifrvytukcqcpeqdwwucymgvyrektsnfijdcdoawbcwkkjkqwzffnuqituihjaklvthulmcjrhqcyzvekzqlxgddjoir");//expect bb
+        String result6 = solution.longestPalindrome("zudfweormatjycujjirzjpyrmaxurectxrtqedmmgergwdvjmjtstdhcihacqnothgttgqfywcpgnuvwglvfiuxteopoyizgehkwuvvkqxbnufkcbodlhdmbqyghkojrgokpwdhtdrwmvdegwycecrgjvuexlguayzcammupgeskrvpthrmwqaqsdcgycdupykppiyhwzwcplivjnnvwhqkkxildtyjltklcokcrgqnnwzzeuqioyahqpuskkpbxhvzvqyhlegmoviogzwuiqahiouhnecjwysmtarjjdjqdrkljawzasriouuiqkcwwqsxifbndjmyprdozhwaoibpqrthpcjphgsfbeqrqqoqiqqdicvybzxhklehzzapbvcyleljawowluqgxxwlrymzojshlwkmzwpixgfjljkmwdtjeabgyrpbqyyykmoaqdambpkyyvukalbrzoyoufjqeftniddsfqnilxlplselqatdgjziphvrbokofvuerpsvqmzakbyzxtxvyanvjpfyvyiivqusfrsufjanmfibgrkwtiuoykiavpbqeyfsuteuxxjiyxvlvgmehycdvxdorpepmsinvmyzeqeiikajopqedyopirmhymozernxzaueljjrhcsofwyddkpnvcvzixdjknikyhzmstvbducjcoyoeoaqruuewclzqqqxzpgykrkygxnmlsrjudoaejxkipkgmcoqtxhelvsizgdwdyjwuumazxfstoaxeqqxoqezakdqjwpkrbldpcbbxexquqrznavcrprnydufsidakvrpuzgfisdxreldbqfizngtrilnbqboxwmwienlkmmiuifrvytukcqcpeqdwwucymgvyrektsnfijdcdoawbcwkkjkqwzffnuqituihjaklvthulmcjrhqcyzvekzqlxgddjoir");//expect bb
         print(result6 + "...time:" + (System.currentTimeMillis() - start2));
 
         long start0 = System.currentTimeMillis();
-        String result0 = solution.longestPalindromeV3("zudfweormatjycujjirzjpyrmaxurectxrtqedmmgergwdvjmjtstdhcihacqnothgttgqfywcpgnuvwglvfiuxteopoyizgehkwuvvkqxbnufkcbodlhdmbqyghkojrgokpwdhtdrwmvdegwycecrgjvuexlguayzcammupgeskrvpthrmwqaqsdcgycdupykppiyhwzwcplivjnnvwhqkkxildtyjltklcokcrgqnnwzzeuqioyahqpuskkpbxhvzvqyhlegmoviogzwuiqahiouhnecjwysmtarjjdjqdrkljawzasriouuiqkcwwqsxifbndjmyprdozhwaoibpqrthpcjphgsfbeqrqqoqiqqdicvybzxhklehzzapbvcyleljawowluqgxxwlrymzojshlwkmzwpixgfjljkmwdtjeabgyrpbqyyykmoaqdambpkyyvukalbrzoyoufjqeftniddsfqnilxlplselqatdgjziphvrbokofvuerpsvqmzakbyzxtxvyanvjpfyvyiivqusfrsufjanmfibgrkwtiuoykiavpbqeyfsuteuxxjiyxvlvgmehycdvxdorpepmsinvmyzeqeiikajopqedyopirmhymozernxzaueljjrhcsofwyddkpnvcvzixdjknikyhzmstvbducjcoyoeoaqruuewclzqqqxzpgykrkygxnmlsrjudoaejxkipkgmcoqtxhelvsizgdwdyjwuumazxfstoaxeqqxoqezakdqjwpkrbldpcbbxexquqrznavcrprnydufsidakvrpuzgfisdxreldbqfizngtrilnbqboxwmwienlkmmiuifrvytukcqcpeqdwwucymgvyrektsnfijdcdoawbcwkkjkqwzffnuqituihjaklvthulmcjrhqcyzvekzqlxgddjoir");//expect bb
-//        String result0 = solution.longestPalindromeV3("adam");//expect gykrkyg
+        String result0 = solution.longestPalindrome("zudfweormatjycujjirzjpyrmaxurectxrtqedmmgergwdvjmjtstdhcihacqnothgttgqfywcpgnuvwglvfiuxteopoyizgehkwuvvkqxbnufkcbodlhdmbqyghkojrgokpwdhtdrwmvdegwycecrgjvuexlguayzcammupgeskrvpthrmwqaqsdcgycdupykppiyhwzwcplivjnnvwhqkkxildtyjltklcokcrgqnnwzzeuqioyahqpuskkpbxhvzvqyhlegmoviogzwuiqahiouhnecjwysmtarjjdjqdrkljawzasriouuiqkcwwqsxifbndjmyprdozhwaoibpqrthpcjphgsfbeqrqqoqiqqdicvybzxhklehzzapbvcyleljawowluqgxxwlrymzojshlwkmzwpixgfjljkmwdtjeabgyrpbqyyykmoaqdambpkyyvukalbrzoyoufjqeftniddsfqnilxlplselqatdgjziphvrbokofvuerpsvqmzakbyzxtxvyanvjpfyvyiivqusfrsufjanmfibgrkwtiuoykiavpbqeyfsuteuxxjiyxvlvgmehycdvxdorpepmsinvmyzeqeiikajopqedyopirmhymozernxzaueljjrhcsofwyddkpnvcvzixdjknikyhzmstvbducjcoyoeoaqruuewclzqqqxzpgykrkygxnmlsrjudoaejxkipkgmcoqtxhelvsizgdwdyjwuumazxfstoaxeqqxoqezakdqjwpkrbldpcbbxexquqrznavcrprnydufsidakvrpuzgfisdxreldbqfizngtrilnbqboxwmwienlkmmiuifrvytukcqcpeqdwwucymgvyrektsnfijdcdoawbcwkkjkqwzffnuqituihjaklvthulmcjrhqcyzvekzqlxgddjoir");//expect bb
+//        String result0 = solution.longestPalindrome("adam");//expect gykrkyg
         print(result0 + "...time:" + (System.currentTimeMillis() - start0));
 
         long start3 = System.currentTimeMillis();
-        String result7 = solution.longestPalindromeV4("babad");//expect bab
+        String result7 = solution.longestPalindrome("babad");//expect bab
         print(result7 + "...time:" + (System.currentTimeMillis() - start3));
 
         long start4 = System.currentTimeMillis();
-        String result8 = solution.longestPalindromeV4("aaaa");//expect aaaa
+        String result8 = solution.longestPalindrome("aaaa");//expect aaaa
         print(result8 + "...time:" + (System.currentTimeMillis() - start4));
 
         long start5 = System.currentTimeMillis();
-        String result9 = solution.longestPalindromeV4("adam");//expect ada
+        String result9 = solution.longestPalindrome("adam");//expect ada
         print(result9 + "...time:" + (System.currentTimeMillis() - start5));
 
         long start6 = System.currentTimeMillis();
-        String result10 = solution.longestPalindromeV4("ccd");//expect ada
+        String result10 = solution.longestPalindrome("ccd");//expect cc
         print(result10 + "...time:" + (System.currentTimeMillis() - start6));
 
         long start7 = System.currentTimeMillis();
-        String result11 = solution.longestPalindromeV4("dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");//expect dddd。。。
-        print(result11 + "...time:" + (System.currentTimeMillis() - start7));
+        String result11 = solution.longestPalindrome("dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");//expect dddd。。。
+        print( "time:" + (System.currentTimeMillis() - start7)+"..."+result11);
 
         long start8 = System.currentTimeMillis();
-        String result12 = solution.longestPalindromeV4("321012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210123210012321001232100123210123");//expect ada
-        print(result12 + "...time:" + (System.currentTimeMillis() - start8));
-        int length = ("321012321001232100123210012321001232100123210012321001232100123210012321001232100123" +
-                "210012321001232100123210012321001232100123210012321001232100123210012321001232100123" +
-                "210012321001232100123210012321001232100123210012321001232100123210012321001232100123210" +
-                "0123210012321001232100123210012321001232100123210012321001232100123210012321001232100123" +
-                "21001232100123210012321001232100123210012321001232100123210012321001232100123210012321001" +
-                "23210012321001232100123210012321001232100123210012321001232100123210012321001232100123210" +
-                "01232100123210012321001232100123210012321001232100123210012321001232100123210012321001232" +
-                "1001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232" +
-                "1001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232" +
-                "10012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321" +
-                "0012321001232100123210012321001232100123210012321001232100123210012321001232100123210123").length();
-        print(length+"");
+        String result12 = solution.longestPalindrome("321012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210123210012321001232100123210123");//expect ada
+        print("time:" + (System.currentTimeMillis() - start8)+"..."+result12);
 
-        print(("321012321001232100123210012321001232100123210012321001232100123210012321001232100123" +
-                "210012321001232100123210012321001232100123210012321001232100123210012321001232100123" +
-                "210012321001232100123210012321001232100123210012321001232100123210012321001232100123210" +
-                "0123210012321001232100123210012321001232100123210012321001232100123210012321001232100123" +
-                "21001232100123210012321001232100123210012321001232100123210012321001232100123210012321001" +
-                "23210012321001232100123210012321001232100123210012321001232100123210012321001232100123210" +
-                "01232100123210012321001232100123210012321001232100123210012321001232100123210012321001232" +
-                "1001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232" +
-                "1001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232" +
-                "10012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321" +
-                "0012321001232100123210012321001232100123210012321001232100123210012321001232100123210123").charAt(length/2)+"");
+        long start9 = System.currentTimeMillis();
+//        String result13 = solution.longestPalindrome("iptmykvjanwiihepqhzupneckpzomgvzmyoybzfynybpfybngttozprjbupciuinpzryritfmyxyppxigitnemanreexcpwscvcwddnfjswgprabdggbgcillisyoskdodzlpbltefiz");//expect ada
+        String result13 = solution.longestPalindrome("rabdggbgcillisyoskdodzlpbltefiz");
+        print(result13 + "...time:" + (System.currentTimeMillis() - start9));//expected illi
 
-        print(("321012321001232100123210012321001232100123210012321001232100123210012321001232100123" +
-                "210012321001232100123210012321001232100123210012321001232100123210012321001232100123" +
-                "210012321001232100123210012321001232100123210012321001232100123210012321001232100123210" +
-                "0123210012321001232100123210012321001232100123210012321001232100123210012321001232100123" +
-                "21001232100123210012321001232100123210012321001232100123210012321001232100123210012321001" +
-                "23210012321001232100123210012321001232100123210012321001232100123210012321001232100123210" +
-                "01232100123210012321001232100123210012321001232100123210012321001232100123210012321001232" +
-                "1001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232" +
-                "1001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232" +
-                "10012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321" +
-                "0012321001232100123210012321001232100123210012321001232100123210012321001232100123210123").charAt(length/2-1)+"");
+        long start10 = System.currentTimeMillis();
+        String result14 = solution.longestPalindrome("ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg");//expect ada
+        print(result14.length()+ "..."+result14 +"...time:" + (System.currentTimeMillis() - start10));
+
+        long start11 = System.currentTimeMillis();
+        String result15 = solution.longestPalindrome("ffffffggggg");
+        print(result15.length()+ "..."+result15 +"...time:" + (System.currentTimeMillis() - start11));//expected ffffff
+
+        long start12 = System.currentTimeMillis();
+        String result16 = solution.longestPalindrome("fffffgggggg");
+        print(result16.length()+ "..."+result16 +"...time:" + (System.currentTimeMillis() - start12));//expected gggggg
+
+        long start13 = System.currentTimeMillis();
+        String result17 = solution.longestPalindrome("bananas");
+        print(result17.length()+ "..."+result17 +"...time:" + (System.currentTimeMillis() - start13));//expected anana
     }
 }
