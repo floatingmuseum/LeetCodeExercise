@@ -23,4 +23,11 @@ public class EasySolutionTest {
             print(result[i] + "");
         }
     }
+
+    @Test
+    public void testReverseInteger(){
+        print("result1:"+solution.reverseInteger(123));
+        print("result1:"+solution.reverseInteger(-123));
+        print("result1:"+solution.reverseInteger(120));
+    }
 }
