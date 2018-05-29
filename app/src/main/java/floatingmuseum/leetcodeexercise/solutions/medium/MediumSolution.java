@@ -1,6 +1,8 @@
 package floatingmuseum.leetcodeexercise.solutions.medium;
 
 
+import floatingmuseum.leetcodeexercise.entity.ListNode;
+
 /**
  * Created by Floatingmuseum on 2018/5/22.
  */
@@ -53,6 +55,26 @@ public class MediumSolution {
             }
         }
         return finalString.length();
+    }
+
+    /**
+     * TRYING
+     * <p>
+     * Add Two Numbers
+     * <p>
+     * You are given two non-empty linked lists representing two non-negative integers.
+     * The digits are stored in reverse order and each of their nodes contain a single digit.
+     * Add the two numbers and return it as a linked list.
+     * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+     * <p>
+     * Example
+     * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+     * Output: 7 -> 0 -> 8
+     * Explanation: 342 + 465 = 807.
+     */
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+
+        return null;
     }
 
     /**
@@ -154,5 +176,84 @@ public class MediumSolution {
         } else {
             return finalResult;
         }
+    }
+
+    /**
+     * PASSED
+     * <p>
+     * ZigZag Conversion
+     * <p>
+     * The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+     * P   A   H   N
+     * A P L S I I G
+     * Y   I   R
+     * <p>
+     * And then read line by line: "PAHNAPLSIIGYIR"
+     * <p>
+     * Example 1:
+     * Input: s = "PAYPALISHIRING", numRows = 3
+     * Output: "PAHNAPLSIIGYIR"
+     * <p>
+     * Example 2:
+     * Input: s = "PAYPALISHIRING", numRows = 4
+     * Output: "PINALSIGYAHRPI"
+     * Explanation:
+     * <p>5 3 1
+     * P     I    N
+     * A   L S  I G
+     * Y A   H R
+     * P     I
+     * <p>7 5 3 1
+     * p   p    p
+     * p  pp   p
+     * p p p  p
+     * pp  pp
+     * p   p
+     * <p>9 7 5 3 1
+     * p    p    p
+     * p   pp   p
+     * p  p p  p
+     * p p  p p
+     * pp   pp
+     * p    p
+     */
+    public String convert(String s, int numRows) {
+        if (numRows==1){
+            return s;
+        }
+
+        StringBuilder result = new StringBuilder();
+
+        int key = numRows - 3 + numRows;
+
+        for (int i = 0; i < numRows; i++) {
+
+            int appendIndex = i;
+            int stepKeyOne = -1;
+            int stepKeyTwo = -1;
+
+            if (i > 0 && i < numRows - 1) {
+                stepKeyOne = key - i * 2;
+                stepKeyTwo = key - stepKeyOne - 1;
+            }
+
+            boolean useOne = true;
+
+            while (appendIndex < s.length()) {
+                if (i == 0 || (i == numRows - 1)) {
+                    result.append(s.charAt(appendIndex));
+                    appendIndex += (key+1);
+                } else {
+                    result.append(s.charAt(appendIndex));
+                    if (useOne) {
+                        appendIndex += stepKeyOne + 1;
+                    } else {
+                        appendIndex += stepKeyTwo + 1;
+                    }
+                    useOne = !useOne;
+                }
+            }
+        }
+        return result.toString();
     }
 }

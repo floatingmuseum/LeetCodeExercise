@@ -69,11 +69,11 @@ public class MediumSolutionTest {
 
         long start7 = System.currentTimeMillis();
         String result11 = solution.longestPalindrome("dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");//expect dddd。。。
-        print( "time:" + (System.currentTimeMillis() - start7)+"..."+result11);
+        print("time:" + (System.currentTimeMillis() - start7) + "..." + result11);
 
         long start8 = System.currentTimeMillis();
         String result12 = solution.longestPalindrome("321012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210123210012321001232100123210123");//expect ada
-        print("time:" + (System.currentTimeMillis() - start8)+"..."+result12);
+        print("time:" + (System.currentTimeMillis() - start8) + "..." + result12);
 
         long start9 = System.currentTimeMillis();
 //        String result13 = solution.longestPalindrome("iptmykvjanwiihepqhzupneckpzomgvzmyoybzfynybpfybngttozprjbupciuinpzryritfmyxyppxigitnemanreexcpwscvcwddnfjswgprabdggbgcillisyoskdodzlpbltefiz");//expect ada
@@ -82,18 +82,28 @@ public class MediumSolutionTest {
 
         long start10 = System.currentTimeMillis();
         String result14 = solution.longestPalindrome("ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg");//expect ada
-        print(result14.length()+ "..."+result14 +"...time:" + (System.currentTimeMillis() - start10));
+        print(result14.length() + "..." + result14 + "...time:" + (System.currentTimeMillis() - start10));
 
         long start11 = System.currentTimeMillis();
         String result15 = solution.longestPalindrome("ffffffggggg");
-        print(result15.length()+ "..."+result15 +"...time:" + (System.currentTimeMillis() - start11));//expected ffffff
+        print(result15.length() + "..." + result15 + "...time:" + (System.currentTimeMillis() - start11));//expected ffffff
 
         long start12 = System.currentTimeMillis();
         String result16 = solution.longestPalindrome("fffffgggggg");
-        print(result16.length()+ "..."+result16 +"...time:" + (System.currentTimeMillis() - start12));//expected gggggg
+        print(result16.length() + "..." + result16 + "...time:" + (System.currentTimeMillis() - start12));//expected gggggg
 
         long start13 = System.currentTimeMillis();
         String result17 = solution.longestPalindrome("bananas");
-        print(result17.length()+ "..."+result17 +"...time:" + (System.currentTimeMillis() - start13));//expected anana
+        print(result17.length() + "..." + result17 + "...time:" + (System.currentTimeMillis() - start13));//expected anana
+    }
+
+    @Test
+    public void testZigZagConversion() {
+        String result1 = solution.convert("PAYPALISHIRING", 3);
+        print("result1:" + result1 + "..." + result1.equals("PAHNAPLSIIGYIR"));
+        String result2 = solution.convert("PAYPALISHIRING", 4);
+        print("result2:" + result2 + "..." + result2.equals("PINALSIGYAHRPI"));
+        String result3 = solution.convert("a", 1);
+        print("result3:" + result3 + "..." + result3.equals("a"));
     }
 }
