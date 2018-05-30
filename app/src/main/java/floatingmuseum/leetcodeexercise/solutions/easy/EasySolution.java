@@ -48,7 +48,7 @@ public class EasySolution {
     }
 
     /**
-     * TRYING
+     * PASSED
      * <p>
      * Reverse Integer
      * <p>
@@ -71,37 +71,24 @@ public class EasySolution {
      * [Math.pow(-2,31),  Math.pow(2,31)-1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
      */
     public int reverseInteger(int x) {
-//        System.out.println(Math.pow(-2,31));
-//        System.out.println(Math.pow(2,31)-1);
-
-//        System.out.println(x % 10);
-//        System.out.println(5 / 10);
-//        System.out.println(0 / 10);
-
         if (x % 10 == x) {
             return x;
         }
 
-        List<Integer> result = new ArrayList<>();
-
-//        int step = 1;
-
+        int finalValue = 0;
+        int tempValue = 0;
         while (x % 10 != x) {
             int num = x % 10;
-            result.add(num);
-            x = x / 10;
-//            if (x<10&&x>0){
-//                result.add(x);
-//                break;
-//            }
+            finalValue = (finalValue + num) * 10;
+            if (finalValue/10-num!=tempValue){
+                //out of range
+                return 0;
+            }
+            tempValue = finalValue;
+            x /= 10;
         }
 
-        int finalValue = 0;
-
-        for (int i = 0; i < result.size(); i++) {
-            int value = result.get(i);
-            finalValue = finalValue*10*i+value;
-        }
+        finalValue += x;
 
         return finalValue;
     }

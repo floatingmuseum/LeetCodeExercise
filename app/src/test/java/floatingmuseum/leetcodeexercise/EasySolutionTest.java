@@ -26,8 +26,9 @@ public class EasySolutionTest {
 
     @Test
     public void testReverseInteger(){
-        print("result1:"+solution.reverseInteger(123));
-        print("result1:"+solution.reverseInteger(-123));
-        print("result1:"+solution.reverseInteger(120));
+        print("result1:"+solution.reverseInteger(123));//expect 123
+        print("result1:"+solution.reverseInteger(-123));//expect -321
+        print("result1:"+solution.reverseInteger(120));//expect 21
+        print("result1:"+solution.reverseInteger(1534236469));//expect 0
     }
 }
