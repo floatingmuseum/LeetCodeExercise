@@ -106,4 +106,17 @@ public class MediumSolutionTest {
         String result3 = solution.convert("a", 1);
         print("result3:" + result3 + "..." + result3.equals("a"));
     }
+
+    @Test
+    public void testStringToInteger(){
+        print("result1:" + solution.myAtoi("-91283472332"));//-2147483648
+        print("result1:" + solution.myAtoi("+"));//0
+        print("result1:" + solution.myAtoi("-2147483648"));//-2147483648
+        print("result1:" + solution.myAtoi("-"));//0
+        print("result1:" + solution.myAtoi(" "));//0
+        print("result1:" + solution.myAtoi("+1"));//1
+        print("result1:" + solution.myAtoi("+-1"));//0
+        print("result1:" + solution.myAtoi("   +0 123"));//0
+        print("result1:" + solution.myAtoi("0-1"));//0
+    }
 }

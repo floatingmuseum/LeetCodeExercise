@@ -1,6 +1,9 @@
 package floatingmuseum.leetcodeexercise.solutions.medium;
 
 
+import java.util.HashSet;
+import java.util.Set;
+
 import floatingmuseum.leetcodeexercise.entity.ListNode;
 
 /**
@@ -78,7 +81,7 @@ public class MediumSolution {
     }
 
     /**
-     * PASSED 速度一般，根据最佳答案来看，应减少字符串操作，只需要知道最长回文的前后索引，最后做一些截取就可以了
+     * PASSED 速度一般，根据最佳答案来看，应减少字符串操作，只需要知道最长回文的前后索引，最后做一下截取就可以了
      * <p>
      * Longest Palindromic Substring
      * <p>
@@ -218,7 +221,7 @@ public class MediumSolution {
      * p    p
      */
     public String convert(String s, int numRows) {
-        if (numRows==1){
+        if (numRows == 1) {
             return s;
         }
 
@@ -242,7 +245,7 @@ public class MediumSolution {
             while (appendIndex < s.length()) {
                 if (i == 0 || (i == numRows - 1)) {
                     result.append(s.charAt(appendIndex));
-                    appendIndex += (key+1);
+                    appendIndex += (key + 1);
                 } else {
                     result.append(s.charAt(appendIndex));
                     if (useOne) {
@@ -255,5 +258,123 @@ public class MediumSolution {
             }
         }
         return result.toString();
+    }
+
+    /**
+     * PASSED 效率很低
+     * <p>
+     * String to Integer (atoi)
+     * <p>
+     * Implement atoi which converts a string to an integer.
+     * The function first discards as many whitespace characters as necessary until the first non-whitespace character is found.
+     * Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as
+     * possible, and interprets them as a numerical value.
+     * <p>
+     * The string can contain additional characters after those that form the integral number, which are ignored and have no effect
+     * on the behavior of this function.
+     * <p>
+     * If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because
+     * either str is empty or it contains only whitespace characters, no conversion is performed.
+     * <p>
+     * If no valid conversion could be performed, a zero value is returned.
+     * <p>
+     * Note:
+     * Only the space character ' ' is considered as whitespace character.
+     * Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range:
+     * [INT_MIN,  INT_MAX]. If the numerical value is out of the range of representable values, INT_MAX or INT_MIN is
+     * returned.
+     * <p>
+     * Example 1:
+     * Input: "42"
+     * Output: 42
+     * <p>
+     * Example 2:
+     * Input: "   -42"
+     * Output: -42
+     * Explanation: The first non-whitespace character is '-', which is the minus sign.
+     * Then take as many numerical digits as possible, which gets 42.
+     * <p>
+     * Example 3:
+     * Input: "4193 with words"
+     * Output: 4193
+     * Explanation: Conversion stops at digit '3' as the next character is not a numerical digit.
+     * <p>
+     * Example 4:
+     * Input: "words and 987"
+     * Output: 0
+     * Explanation: The first non-whitespace character is 'w', which is not a numerical
+     * digit or a +/- sign. Therefore no valid conversion could be performed.
+     * <p>
+     * Example 5:
+     * Input: "-91283472332"
+     * Output: -2147483648
+     * Explanation: The number "-91283472332" is out of the range of a 32-bit signed integer.
+     * Thefore INT_MIN (−231) is returned.
+     */
+    public int myAtoi(String str) {
+        if (str == null || "".equals(str) || "-".equals(str) || "+".equals(str)) {
+            return 0;
+        }
+
+//        String newStr = str.replace(" ", "");
+        String newStr = str.trim();
+        if (newStr.length() == 0) {
+            return 0;
+        }
+
+        if (newStr.length() > 2) {
+            if (newStr.startsWith("+") || newStr.startsWith("-")) {
+//                System.out.println(newStr.charAt(1));
+                boolean lessThanZero = newStr.charAt(1) < '0';
+                boolean bigThanNine = newStr.charAt(1) > '9';
+                if (lessThanZero || bigThanNine) {
+                    return 0;
+                }
+            }
+        }
+        Set<Character> field = new HashSet<>();
+        field.add('-');
+        field.add('+');
+        field.add('0');
+        field.add('1');
+        field.add('2');
+        field.add('3');
+        field.add('4');
+        field.add('5');
+        field.add('6');
+        field.add('7');
+        field.add('8');
+        field.add('9');
+
+        if (!field.contains(newStr.charAt(0))) {
+            return 0;
+        }
+
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < newStr.length(); i++) {
+            char c = newStr.charAt(i);
+
+            if (field.contains(c)) {
+                result.append(c);
+                if (i==0){
+                    field.remove('-');
+                    field.remove('+');
+                }
+            } else {
+                break;
+            }
+        }
+
+        try {
+            int i = Integer.valueOf(result.toString());
+            return i;
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            if (result.charAt(0) == '-') {
+                return Integer.MIN_VALUE;
+            } else {
+                return Integer.MAX_VALUE;
+            }
+        }
     }
 }
