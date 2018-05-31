@@ -109,14 +109,16 @@ public class MediumSolutionTest {
 
     @Test
     public void testStringToInteger(){
-        print("result1:" + solution.myAtoi("-91283472332"));//-2147483648
-        print("result1:" + solution.myAtoi("+"));//0
-        print("result1:" + solution.myAtoi("-2147483648"));//-2147483648
-        print("result1:" + solution.myAtoi("-"));//0
-        print("result1:" + solution.myAtoi(" "));//0
-        print("result1:" + solution.myAtoi("+1"));//1
-        print("result1:" + solution.myAtoi("+-1"));//0
-        print("result1:" + solution.myAtoi("   +0 123"));//0
-        print("result1:" + solution.myAtoi("0-1"));//0
+        print("result1:" + solution.myAtoiV2("42"));//42
+        print("result1:" + solution.myAtoiV2("words and 987"));//0
+        print("result1:" + solution.myAtoiV2("-91283472332"));//-2147483648
+        print("result1:" + solution.myAtoiV2("+"));//0
+        print("result1:" + solution.myAtoiV2("-2147483648"));//-2147483648
+        print("result1:" + solution.myAtoiV2("-"));//0
+        print("result1:" + solution.myAtoiV2(" "));//0
+        print("result1:" + solution.myAtoiV2("+1"));//1
+        print("result1:" + solution.myAtoiV2("+-1"));//0
+        print("result1:" + solution.myAtoiV2("   +0 123"));//0
+        print("result1:" + solution.myAtoiV2("0-1"));//0
     }
 }

@@ -1,6 +1,8 @@
 package floatingmuseum.leetcodeexercise.solutions.medium;
 
 
+import android.content.IntentFilter;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -356,7 +358,7 @@ public class MediumSolution {
 
             if (field.contains(c)) {
                 result.append(c);
-                if (i==0){
+                if (i == 0) {
                     field.remove('-');
                     field.remove('+');
                 }
@@ -366,14 +368,82 @@ public class MediumSolution {
         }
 
         try {
-            int i = Integer.valueOf(result.toString());
-            return i;
+            return Integer.valueOf(result.toString());
         } catch (NumberFormatException e) {
             e.printStackTrace();
             if (result.charAt(0) == '-') {
                 return Integer.MIN_VALUE;
             } else {
                 return Integer.MAX_VALUE;
+            }
+        }
+    }
+
+    public int myAtoiV2(String str) {
+        if (str == null) {
+            return 0;
+        }
+
+        String newStr = str.trim();
+
+        if (newStr.length() == 0) {
+            return 0;
+        }
+
+        if (!newStr.startsWith("+") && !newStr.startsWith("-") && (newStr.charAt(0) < '0' || newStr.charAt(0) > '9')) {
+            return 0;
+        }
+
+        boolean hasNegative = false;
+        boolean findStartIndex = false;
+        int startIndex = 0;
+        int endIndex = 0;
+
+        for (int i = 0; i < newStr.length(); i++) {
+            char c = newStr.charAt(i);
+
+
+            if (!findStartIndex && c != '+' && c != '-' && c > '0' && c <= '9') {
+                startIndex = i;
+                findStartIndex = true;
+            }
+
+            if (i == 0) {
+                if (c == '-') {
+                    hasNegative = true;
+                }
+            } else {
+                if (c < '0' || c > '9') {
+                    break;
+                }
+            }
+            endIndex++;
+        }
+
+        String tempResult = newStr.substring(startIndex, endIndex);
+        if (!findStartIndex) {
+            return 0;
+        } else {
+            boolean outRangeTooMuch = tempResult.length() > 11;
+            if (outRangeTooMuch) {
+                if (hasNegative) {
+                    return Integer.MIN_VALUE;
+                } else {
+                    return Integer.MAX_VALUE;
+                }
+            }
+
+            if (hasNegative) {
+                tempResult = "-" + tempResult;
+            }
+
+            long longResult = Long.valueOf(tempResult);
+            if (longResult < Integer.MIN_VALUE) {
+                return Integer.MIN_VALUE;
+            } else if (longResult > Integer.MAX_VALUE) {
+                return Integer.MAX_VALUE;
+            } else {
+                return (int) longResult;
             }
         }
     }
