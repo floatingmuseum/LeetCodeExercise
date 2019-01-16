@@ -25,10 +25,20 @@ public class EasySolutionTest {
     }
 
     @Test
-    public void testReverseInteger(){
-        print("result1:"+solution.reverseInteger(123));//expect 123
-        print("result1:"+solution.reverseInteger(-123));//expect -321
-        print("result1:"+solution.reverseInteger(120));//expect 21
-        print("result1:"+solution.reverseInteger(1534236469));//expect 0
+    public void testReverseInteger() {
+        print("result1:" + solution.reverseInteger(123));//expect 123
+        print("result1:" + solution.reverseInteger(-123));//expect -321
+        print("result1:" + solution.reverseInteger(120));//expect 21
+        print("result1:" + solution.reverseInteger(1534236469));//expect 0
+    }
+
+    @Test
+    public void testPalindromeNumber() {
+//        print("test...123::" + solution.palindromeNumberV2(123));//expect false
+//        print("test...-121:" + solution.palindromeNumberV2(-121));//expect false
+//        print("test...0:" + solution.palindromeNumberV2(0));//expect true
+//        print("test...121:" + solution.palindromeNumberV2(121));//expect true
+//        print("test...9:" + solution.palindromeNumberV2(9));//expect false
+        print("test...9:" + solution.palindromeNumberV2(10));//expect false
     }
 }
