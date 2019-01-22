@@ -108,7 +108,7 @@ public class MediumSolutionTest {
     }
 
     @Test
-    public void testStringToInteger(){
+    public void testStringToInteger() {
         print("result1:" + solution.myAtoiV2("42"));//42
         print("result1:" + solution.myAtoiV2("words and 987"));//0
         print("result1:" + solution.myAtoiV2("-91283472332"));//-2147483648
@@ -120,5 +120,10 @@ public class MediumSolutionTest {
         print("result1:" + solution.myAtoiV2("+-1"));//0
         print("result1:" + solution.myAtoiV2("   +0 123"));//0
         print("result1:" + solution.myAtoiV2("0-1"));//0
+    }
+
+    @Test
+    public void testMaxArea() {
+        print("result1:" + solution.maxAreaV2(new int[]{1, 8, 6, 2, 5, 4, 8, 3, 7}));//49
     }
 }

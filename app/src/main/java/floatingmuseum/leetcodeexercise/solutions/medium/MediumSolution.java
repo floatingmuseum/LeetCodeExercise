@@ -3,7 +3,11 @@ package floatingmuseum.leetcodeexercise.solutions.medium;
 
 import android.content.IntentFilter;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import floatingmuseum.leetcodeexercise.entity.ListNode;
@@ -446,5 +450,74 @@ public class MediumSolution {
                 return (int) longResult;
             }
         }
+    }
+
+    /**
+     * PASSED SLOW
+     * <p>
+     * Given n non-negative integers a1, a2, ..., an , where each represents a point at coordinate
+     * (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and
+     * (i, 0). Find two lines, which together with x-axis forms a container, such that the container
+     * contains the most water.
+     * <p>
+     * Note: You may not slant the container and n is at least 2.
+     * <p>
+     * Input: [1,8,6,2,5,4,8,3,7]
+     * Output: 49
+     */
+    public int maxArea(int[] height) {
+        int max = 0;
+
+        if (height.length == 2) {
+            max = height[0] > height[1] ? height[1] : height[0];
+        } else {
+            Map<Integer, Integer> data = new HashMap<>();
+            for (int i = 0; i < height.length; i++) {
+                int iValue = height[i];
+                if (i != 0) {
+                    for (Integer index : data.keySet()) {
+                        int value = data.get(index);
+                        int usableValue = value > iValue ? iValue : value;
+                        int area = usableValue * (i - index);
+                        if (area > max) {
+                            max = area;
+                        }
+                    }
+                }
+                data.put(i, iValue);
+            }
+        }
+
+        return max;
+    }
+
+    /**
+     * PASSED
+     */
+    public int maxAreaV2(int[] height) {
+        //1 2 3 4
+        //1 2 3 4 5
+        int max = 0;
+
+        int leftIndex = 0;
+        int rightIndex = height.length - 1;
+
+        while (leftIndex < rightIndex) {
+            int leftValue = height[leftIndex];
+            int rightValue = height[rightIndex];
+            int lowValue = leftValue > rightValue ? rightValue : leftValue;
+            int area = lowValue * (rightIndex - leftIndex);
+            if (area > max) {
+                max = area;
+            }
+
+            if (leftValue > rightValue) {
+                rightIndex--;
+            } else {
+                leftIndex++;
+            }
+        }
+
+        return max;
     }
 }
